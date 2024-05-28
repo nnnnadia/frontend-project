@@ -1,5 +1,5 @@
 <script setup>
-import UserListButtons from './UserListButtons.vue'
+import { UserListButtons } from '@/components'
 
 const props = defineProps({
   user: Object

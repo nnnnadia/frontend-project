@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
-import UserRow from './UserRow.vue'
+import { UserRow } from '@/components'
 
 const userList = reactive([
   {

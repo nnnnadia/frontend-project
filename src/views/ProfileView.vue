@@ -1,9 +1,17 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { ProfileForm } from '@/components'
+
+const route = useRoute()
 const searchQuery = defineModel('searchQuery')
+
+const isNewUser = computed(() => !route.params.id)
 </script>
 
 <template>
   <div class="about">
+    <ProfileForm :is-new-user="isNewUser" />
     <input type="text" v-model="searchQuery" />
   </div>
 </template>
