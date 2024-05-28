@@ -1,11 +1,12 @@
 <script setup>
-import router from '@/router'
+import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
+const router = useRouter()
 const searchInput = ref('')
 
 function goToNewUserForm() {
-  router.push({ path: '/user', query: { createUser: true } })
+  router.push({ path: '/user', query: { createUser: searchInput.value } })
 }
 </script>
 
