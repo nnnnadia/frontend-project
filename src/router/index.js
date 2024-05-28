@@ -13,11 +13,20 @@ const router = createRouter({
       props: true
     },
     {
+      path: '/user',
+      name: 'create',
+      component: ProfileView
+    },
+    {
       path: '/user/:id',
-      props: true,
+      name: 'update',
       component: ProfileView,
       children: [
-        { path: 'delete', component: DeletionView }
+        {
+          path: '/delete',
+          name: 'delete',
+          component: DeletionView
+        }
       ]
     }
   ]

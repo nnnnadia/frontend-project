@@ -1,6 +1,10 @@
+<script setup>
+const searchQuery = defineModel('searchQuery')
+</script>
+
 <template>
   <div class="about">
-    <h1>{{ $route.params.id }}</h1>
+    <input type="text" v-model="searchQuery" />
   </div>
 </template>
 

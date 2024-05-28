@@ -1,18 +1,17 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
 
 const router = useRouter()
-const searchInput = ref('')
+const searchQuery = defineModel('searchQuery')
 
 function goToNewUserForm() {
-  router.push({ path: '/user', query: { createUser: searchInput.value } })
+  router.push({ path: '/user' })
 }
 </script>
 
 <template>
   <div class="search-bar">
-    <input type="text" v-model="searchInput" />
+    <input type="text" v-model="searchQuery" />
     <button type="button" @click="goToNewUserForm">Novo Usuário</button>
   </div>
 </template>

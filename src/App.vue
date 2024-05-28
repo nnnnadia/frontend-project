@@ -1,10 +1,13 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterView } from 'vue-router'
+
+const searchQuery = ref('')
 </script>
 
 <template>
   <div class="center">
-    <RouterView />
+    <RouterView v-model:searchQuery="searchQuery" />
   </div>
 </template>
 
