@@ -13,6 +13,7 @@ const props = defineProps({
 
 const userId = computed(() => (route.params.id ? route.params.id : false))
 const isNewUser = computed(() => !userId.value)
+const formTitle = computed(() => (isNewUser.value ? 'Cadastro' : 'Edição'))
 const user = computed(() =>
   isNewUser.value
     ? {
@@ -31,6 +32,6 @@ const user = computed(() =>
 
 <template>
   <div class="about">
-    <ProfileForm :is-new-user="isNewUser" :search-query="searchQuery" :user="user" />
+    <ProfileForm :title="formTitle" :user="user" />
   </div>
 </template>
