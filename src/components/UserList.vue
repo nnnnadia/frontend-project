@@ -1,29 +1,9 @@
 <script setup>
-import { reactive } from 'vue'
 import { UserRow } from '@/components'
 
-const userList = reactive([
-  {
-    id: '1',
-    name: 'Ana Abobrinha',
-    birthDate: new Date('April 28, 1993'),
-    phone: {
-      areaCode: 27,
-      number: 993489502
-    },
-    address: 'Rua dos Abobrinhas'
-  },
-  {
-    id: '2',
-    name: 'Bruno Banana',
-    birthDate: new Date('August 6, 1985'),
-    phone: {
-      areaCode: 27,
-      number: 999473948
-    },
-    address: 'Rua dos Bananas - Bananeiras, ES'
-  }
-])
+const props = defineProps({
+  users: Array
+})
 </script>
 <template>
   <h2>Usuários</h2>
@@ -36,7 +16,7 @@ const userList = reactive([
       </tr>
     </thead>
     <tbody>
-      <UserRow v-for="user in userList" :key="user.id" :user="user" />
+      <UserRow v-for="user in props.users" :key="user.id" :user="user" />
     </tbody>
   </table>
 </template>
