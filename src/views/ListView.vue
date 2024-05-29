@@ -15,3 +15,11 @@ const props = defineProps({
     <UserList :users="props.users" />
   </main>
 </template>
+
+<style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+</style>
